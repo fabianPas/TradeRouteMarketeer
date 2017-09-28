@@ -1,0 +1,43 @@
+﻿@model TradeRouteMarketeer.Models.Market.Route
+
+@{
+    ViewData["Title"] = "Home Page";
+    var buyAmount = 0;
+    var sellAmount = 0;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>At @Model.Origin buy </h4>
+        @foreach (var commodity in Model.ToBuy.Keys)
+        {
+            <strong>@commodity</strong>
+            <ul>
+                @foreach (var trade in Model.ToBuy[commodity])
+                {
+                    <li>
+                        <span class="buy">@trade.Amount</span> for <strong>@trade.TradePrice</strong> at <span class="outlet">@trade.Outlet</span>
+                        @{ buyAmount += trade.Amount * trade.TradePrice; }
+                    </li>
+                }
+            </ul>
+        }
+        <hr />
+        <h4>At @Model.Destination sell</h4>
+        @foreach (var commodity in Model.ToSell.Keys)
+        {
+            <strong>@commodity</strong>
+            <ul>
+                @foreach (var trade in Model.ToSell[commodity])
+                {
+                    <li>
+                        <span class="sell">@trade.Amount</span> for <strong>@trade.TradePrice</strong> at <span class="outlet">@trade.Outlet</span>
+                        @{ sellAmount += trade.Amount * trade.TradePrice; }
+                    </li>
+                }
+            </ul>
+        }
+        <hr />
+        Total profit: @(sellAmount - buyAmount)
+    </div>
+</div>

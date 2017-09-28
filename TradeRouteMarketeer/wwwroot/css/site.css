@@ -1,0 +1,20 @@
+﻿.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+    margin-top: 25px;
+}
+
+.buy {
+    color: green;
+    font-weight: bold;
+}
+
+.sell {
+    color: #bb1c2a;
+    font-weight: bold;
+}
+
+.outlet {
+    font-style: italic;
+}

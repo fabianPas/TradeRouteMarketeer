@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" enctype="multipart/form-data" asp-controller="Calculator" asp-action="Index">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="originData">Origin Island</label>
+                        <input type="file" class="form-control-file" id="originData" name="origin">
+                        <small id="dataHelp" class="form-text text-muted">Select the JSON file with the data from the origin island.</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="destinationData">Destination Island</label>
+                        <input type="file" class="form-control-file" id="destinationData" name="destination">
+                        <small id="dataHelp" class="form-text text-muted">Select the JSON file with the data from the destination island.</small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
