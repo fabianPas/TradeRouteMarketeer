@@ -29,6 +29,7 @@ namespace TradeRouteMarketeer.Models.Market
             foreach (var row in destinationMarket)
             {
                 var availableTrades = originMarket.Where(x => x.Commodity == row.Commodity && x.SellPrice < row.BuyPrice).ToList();
+                
                 if (!availableTrades.Any())
                     continue;
 
